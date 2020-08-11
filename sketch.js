@@ -46,7 +46,7 @@ paper1.display();
 
 function keyPressed() {
 	if (keyCode === UP_ARROW) {
-		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:85,y:-85});
+		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:109,y:-135});
 	}
 	if (keyCode === DOWN_ARROW) {
 		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:-105,y:95});
