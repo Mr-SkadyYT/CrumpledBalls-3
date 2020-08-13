@@ -20,10 +20,7 @@ function setup() {
 	dustbin1 = new DustBin(490,580,15,100);
 	dustbin2 = new DustBin(568,630,170,15);
 	dustbin3 = new DustBin(655,583,15,110);
-	
-//Create a Ground
-ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
-World.add(world, ground);
+	ground7 = new Ground(0,641);
 
 Matter.Bodies.circle(100,350,30);
 
@@ -42,6 +39,7 @@ paper1.display();
  dustbin1.display();
  dustbin2.display();
  dustbin3.display();
+ ground7.display();
 }
 
 function keyPressed() {
