@@ -6,10 +6,10 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
-//function preload() 
-//ballimg = loadImage("paper.png");
-//dustbinimg = loadImage("dustbingreen.png");
+function preload() {
 
+dustbinimg = loadImage("dustbingreen.png");
+}
 function setup() {
 	createCanvas(800, 700);
 
@@ -32,7 +32,7 @@ Matter.Bodies.circle(100,350,30);
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background(175,155,125);
 
   drawSprites();
 paper1.display();
@@ -44,10 +44,10 @@ paper1.display();
 
 function keyPressed() {
 	if (keyCode === UP_ARROW) {
-		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:109,y:-135});
+		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:27,y:-36});
 	}
 	if (keyCode === DOWN_ARROW) {
-		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:-105,y:95});
+		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:-15,y:15});
 	}
 	
 }
