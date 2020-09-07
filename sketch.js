@@ -1,11 +1,14 @@
 var helicopterSprite, packageSprite;
-var dustbin;
+var dustbin, dustbinImg;
 var ball;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
+function preload(){
+dustbinImg = loadImage("dustbingreen.png");
+}
 function setup() {
 	createCanvas(800, 700);
 
@@ -19,8 +22,9 @@ function setup() {
 	ground7 = new Ground(0,641);
 
 Matter.Bodies.circle(100,350,30);
-
-
+dustbin = createSprite(578,530);
+dustbin.addImage(dustbinImg);
+dustbin.scale = 0.6899;
 	Engine.run(engine);
   
 }
