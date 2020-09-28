@@ -5,6 +5,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+const Constraint = Matter.Constraint;
 
 function preload(){
 dustbinImg = loadImage("dustbingreen.png");
@@ -15,7 +16,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	paper1 = new Paper(200,200,30);
+	paper1 = new Paper(100,200,30);
 	dustbin1 = new DustBin(490,580,15,100);
 	dustbin2 = new DustBin(568,630,170,15);
 	dustbin3 = new DustBin(655,583,15,110);
@@ -26,6 +27,8 @@ dustbin = createSprite(578,530);
 dustbin.addImage(dustbinImg);
 dustbin.scale = 0.6899;
 	Engine.run(engine);
+
+	sling = new Slingshot(paper1.body,{x:200,y:200});
   
 }
 
@@ -40,6 +43,14 @@ paper1.display();
  dustbin2.display();
  dustbin3.display();
  ground7.display();
+}
+
+function mouseDragged () {
+    Matter.Body.setPosition(bird.body,{x:mouseX,y:mouseY});
+}
+
+function mouseReleased () {
+    sling.fly();
 }
 
 function keyPressed() {
