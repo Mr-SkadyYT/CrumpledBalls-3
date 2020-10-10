@@ -22,7 +22,7 @@ function setup() {
 	dustbin3 = new DustBin(655,583,15,110);
 	ground7 = new Ground(0,641);
 
-Matter.Bodies.circle(100,350,30);
+//Matter.Bodies.circle(100,350,30);
 dustbin = createSprite(578,530);
 dustbin.addImage(dustbinImg);
 dustbin.scale = 0.6899;
@@ -43,10 +43,11 @@ paper1.display();
  dustbin2.display();
  dustbin3.display();
  ground7.display();
+ sling.display();
 }
 
 function mouseDragged () {
-    Matter.Body.setPosition(bird.body,{x:mouseX,y:mouseY});
+    Matter.Body.setPosition(paper1.body,{x:mouseX,y:mouseY});
 }
 
 function mouseReleased () {
